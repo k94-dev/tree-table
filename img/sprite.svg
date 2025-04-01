@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" overflow="hidden" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol id="icon-load" viewBox="0 0 32 32">
+      <path d="m18 8-4-4H0v26h32V8H18zm-2 7 7 7h-5v8h-4v-8H9l7-7z"/>
+    </symbol>
+    <symbol id="icon-print" viewBox="0 0 32 32">
+      <path d="M8 2h16v4H8V2zm22 6H2c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h6v8h16v-8h6c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM4 14a2 2 0 1 1-.001-3.999A2 2 0 0 1 4 14zm18 14H10V18h12v10z"/>
+    </symbol>
+    <symbol id="icon-save" viewBox="0 0 32 32">
+      <path d="M28 0H0v32h32V4l-4-4zM16 4h4v8h-4V4zm12 24H4V4h2v10h18V4h2.343L28 5.657V28z"/>
+    </symbol>
+    <symbol id="icon-clean" viewBox="0 0 32 32">
+      <path d="M4 10v20c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V10H4zm6 18H8V14h2v14zm4 0h-2V14h2v14zm4 0h-2V14h2v14zm4 0h-2V14h2v14zm4.5-24H20V1.5c0-.825-.675-1.5-1.5-1.5h-7c-.825 0-1.5.675-1.5 1.5V4H3.5C2.675 4 2 4.675 2 5.5V8h26V5.5c0-.825-.675-1.5-1.5-1.5zM18 4h-6V2.025h6V4z"/>
+    </symbol>
+  </defs>
+</svg>
