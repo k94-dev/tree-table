@@ -155,22 +155,7 @@ table td {
   display: none;
   max-width: 200px;
 }
-@media (max-width: 480px) {
-  table button {
-    width: 24px;
-    min-height: 20px;
-  }
-  table input {
-    display: block;
-    margin: 2px auto;
-  }
-}
-@media (min-width: 768px) {
-  table button {
-    width: 32px;
-    min-height: 20px;
-  }
-}
+
 
 button {
   padding: 2px 4px;
@@ -281,4 +266,20 @@ tr td {
     max-width: 1200px;
     padding: 8px;
   }
+  @media (max-width: 480px) {
+  table button {
+    width: 24px;
+    min-height: 20px;
+  }
+  table input {
+    display: block;
+    margin: 2px auto;
+  }
+}
+@media (min-width: 768px) {
+  table button {
+    width: 32px;
+    min-height: 20px;
+  }
+}
 }/*# sourceMappingURL=main.css.map */
