@@ -390,7 +390,7 @@ function generateDotSVG(value) {
   return `<div class="squre-container">${result}</div>`;
 }
 function generateSingleDotBlock(count) {
-  let svg = `<svg width="18" height="18" viewBox="0 0 100 100">`;
+  let svg = `<svg width="16" height="16" viewBox="0 0 100 100">`;
 
   const positions = [
     [20, 20], [80, 20],
@@ -409,19 +409,19 @@ function generateSingleDotBlock(count) {
 
   
   if (count >= 5) {
-    svg += `<line x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="5"/>`;
+    svg += `<line x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="4"/>`;
   }
   if (count >= 6) {
-    svg += `<line x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="5"/>`;
+    svg += `<line x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="4"/>`;
   }
 
  
  if (count >= 7) {
   const sides = [
-    `<line x1="20" y1="80" x2="20" y2="20" stroke="black" stroke-width="5"/>`, 
-    `<line x1="20" y1="80" x2="80" y2="80" stroke="black" stroke-width="5"/>`, 
-    `<line x1="80" y1="80" x2="80" y2="20" stroke="black" stroke-width="5"/>`, 
-    `<line x1="80" y1="20" x2="20" y2="20" stroke="black" stroke-width="5"/>`,
+    `<line x1="20" y1="80" x2="20" y2="20" stroke="black" stroke-width="4"/>`, 
+    `<line x1="20" y1="80" x2="80" y2="80" stroke="black" stroke-width="4"/>`, 
+    `<line x1="80" y1="80" x2="80" y2="20" stroke="black" stroke-width="4"/>`, 
+    `<line x1="80" y1="20" x2="20" y2="20" stroke="black" stroke-width="4"/>`,
   ];
   const sidesToDraw = count - 6;
   for (let i = 0; i < sidesToDraw && i < 4; i++) {
