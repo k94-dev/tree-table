@@ -236,7 +236,7 @@ table td {
 }
 @media (max-width: 480px) {
   table button {
-    width: 24px;
+    width: 26px;
     min-height: 20px;
   }
   table input {
