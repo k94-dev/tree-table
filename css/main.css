@@ -157,7 +157,7 @@ table td {
 }
 @media (max-width: 480px) {
   table button {
-    width: 26px;
+    width: 24px;
     min-height: 20px;
   }
 }
