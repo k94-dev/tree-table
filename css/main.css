@@ -162,7 +162,7 @@ table {
 table th,
 table td {
   outline: 1px solid #ccc;
-  padding: 3px 4px;
+  padding: 2px;
   text-align: center;
   font-size: 8px;
   background: #f2f8f3;
@@ -236,7 +236,7 @@ table td {
 }
 @media (max-width: 480px) {
   table button {
-    width: 26px;
+    width: 30px;
     min-height: 20px;
   }
   table input {
@@ -255,7 +255,7 @@ table td {
 }
 
 button {
-  padding: 2px 4px;
+  padding: 2px;
   margin: 0 2px;
   font-size: 12px;
   cursor: pointer;
