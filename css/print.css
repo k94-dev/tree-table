@@ -4,12 +4,12 @@
 }
 
 @media print {
-    .squre-container {
+    .td {
         resize: none !important;
         overflow: hidden !important;
     }
 
-    .squre-container::-webkit-resizer {
+    .td::-webkit-resizer {
         display: none !important;
     }
 }
