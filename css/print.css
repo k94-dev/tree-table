@@ -4,12 +4,12 @@
 }
 
 @media print {
-    .td {
+    td {
         resize: none !important;
         overflow: hidden !important;
     }
 
-    .td::-webkit-resizer {
+    td::-webkit-resizer {
         display: none !important;
     }
 }
