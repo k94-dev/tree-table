@@ -74,6 +74,85 @@
   background: #eef8ee;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  color: #2d3a2e;
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  background: linear-gradient(to bottom right, #e0f2e9, #ffffff);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  list-style: none;
+}
+
+input {
+  width: 36px;
+  height: 20px;
+  padding: 2px;
+  margin: 1px 5px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 4px;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 8px;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+  .cm-column,
+  tbody tr td:first-child {
+    width: 60px;
+    max-width: 60px;
+    writing-mode: horizontal-tb;
+  }
+  input {
+    width: 50px;
+    height: 30px;
+    padding: 4px;
+  }
+  .wrapper {
+    max-width: 1200px;
+    padding: 8px;
+  }
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -155,7 +234,25 @@ table td {
   display: none;
   max-width: 200px;
 }
-
+@media (max-width: 480px) {
+  table button {
+    width: 24px;
+    min-height: 20px;
+  }
+  table input {
+    display: block;
+    margin: 2px auto;
+  }
+}
+@media (min-width: 481px) {
+  table button {
+    width: 32px;
+    min-height: 20px;
+  }
+  table tr td {
+    font-size: 12px;
+  }
+}
 
 button {
   padding: 2px 4px;
@@ -183,103 +280,4 @@ button {
     height: 46px;
     font-size: 10px;
   }
-}
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-body {
-  color: #2d3a2e;
-  font-family: Rubik, sans-serif;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0;
-  background: linear-gradient(to bottom right, #e0f2e9, #ffffff);
-  background-attachment: fixed;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-address,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  font-style: normal;
-  list-style: none;
-}
-
-input {
-  width: 36px;
-  height: 20px;
-  padding: 2px;
-  margin: 1px 5px;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-}
-
-.wrapper {
-  width: 100%;
-  max-width: 400px;
-  padding: 4px;
-  margin: 0 auto;
-  position: relative;
-}
-
-h1 {
-  text-align: center;
-  margin: 20px 0;
-}
-
-tr td {
-  font-size: 12px;
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 8px;
-  }
-}
-@media (min-width: 768px) {
-  h1 {
-    font-size: 20px;
-  }
-  .cm-column,
-  tbody tr td:first-child {
-    width: 60px;
-    max-width: 60px;
-    writing-mode: horizontal-tb;
-  }
-  input {
-    width: 50px;
-    height: 30px;
-    padding: 4px;
-  }
-  .wrapper {
-    max-width: 1200px;
-    padding: 8px;
-  }
-  @media (max-width: 480px) {
-  table button {
-    width: 24px;
-    min-height: 20px;
-  }
-  table input {
-    display: block;
-    margin: 2px auto;
-  }
-}
-@media (min-width: 768px) {
-  table button {
-    width: 32px;
-    min-height: 20px;
-  }
-}
 }/*# sourceMappingURL=main.css.map */
