@@ -160,9 +160,9 @@ table td {
     width: 24px;
     min-height: 20px;
   }
-  input {
-    display:block;
-    margin: 2px auto
+  table input {
+    display: block;
+    margin: 2px auto;
   }
 }
 @media (min-width: 768px) {
