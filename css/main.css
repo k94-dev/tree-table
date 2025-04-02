@@ -74,33 +74,6 @@
   background: #eef8ee;
 }
 
-button {
-  padding: 2px 4px;
-  margin: 0 2px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-@media (max-width: 480px) {
-  #print-btn,
-  #load-btn,
-  #save-btn,
-  #clean-btn {
-    width: 40px;
-    height: 35px;
-    font-size: 10px;
-  }
-}
-@media (min-width: 768px) {
-  #print-btn,
-  #load-btn,
-  #save-btn,
-  #clean-btn {
-    width: 60px;
-    height: 46px;
-    font-size: 10px;
-  }
-}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -146,8 +119,6 @@ table td input[type=number]:focus {
 }
 table th button,
 table td button {
-  width: 30px;
-  min-height: 20px;
   background: #2f5c2f;
   color: #fff;
   border: none;
@@ -184,7 +155,46 @@ table td {
   display: none;
   max-width: 200px;
 }
+@media (max-width: 480px) {
+  table button {
+    width: 26px;
+    min-height: 20px;
+  }
+}
+@media (min-width: 768px) {
+  table button {
+    width: 32px;
+    min-height: 20px;
+  }
+}
 
+button {
+  padding: 2px 4px;
+  margin: 0 2px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  #print-btn,
+  #load-btn,
+  #save-btn,
+  #clean-btn {
+    width: 40px;
+    height: 35px;
+    font-size: 10px;
+  }
+}
+@media (min-width: 768px) {
+  #print-btn,
+  #load-btn,
+  #save-btn,
+  #clean-btn {
+    width: 60px;
+    height: 46px;
+    font-size: 10px;
+  }
+}
 *,
 *::after,
 *::before {
