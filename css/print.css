@@ -38,7 +38,9 @@ td {
     white-space: normal;
     min-width: 2px;
     width: auto;
-    align-content: flex-end;
+    align-content: center;
+    resize: both;
+    overflow: auto;
 }
 
 td[data-sum] {
@@ -105,9 +107,10 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    max-width: 252px;
+    /* max-width: 252px;
     resize: both;
-    overflow: auto;
+    overflow: auto; */
+    width: auto;
 }
 
 tbody .vertical-text {
@@ -123,3 +126,4 @@ tbody .vertical-text {
     font-size: 12pt;
     margin: 6px 0;
 }
+
