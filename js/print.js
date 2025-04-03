@@ -96,42 +96,6 @@ document.getElementById('print-btn').addEventListener('click', () => {
   });
 };
 
-
-
-
-//     function splitTableByTrees(table, maxTreesPerPage = 4) {
-//   const allTreeCells = table.querySelectorAll('td[data-tree]');
-//   const treesWithData = new Map();
-
-//   allTreeCells.forEach(cell => {
-//     const tree = cell.dataset.tree;
-//     const div = cell.querySelector('div');
-//     const value = div ? parseInt(div.textContent.trim()) : 0;
-//     if (value > 0) {
-//       if (!treesWithData.has(tree)) treesWithData.set(tree, []);
-//       treesWithData.get(tree).push(cell.dataset.col);
-//     }
-//   });
-
-//   const treeChunks = Array.from(treesWithData.keys())
-//     .reduce((chunks, tree, i) => {
-//       const chunkIndex = Math.floor(i / maxTreesPerPage);
-//       if (!chunks[chunkIndex]) chunks[chunkIndex] = [];
-//       chunks[chunkIndex].push(tree);
-//       return chunks;
-//     }, []);
-
-//   return treeChunks.map(treeGroup => {
-//     const clone = table.cloneNode(true);
-//     clone.querySelectorAll('td[data-tree]').forEach(cell => {
-//       if (!treeGroup.includes(cell.dataset.tree)) {
-//         cell.remove();
-//       }
-//     });
-//     return clone.outerHTML;
-//   });
-// }
-
 function splitTableByTreesValid(table, maxTreesPerPage = 4) {
   const allTreeCells = table.querySelectorAll('td[data-tree]');
   const treesWithData = new Map();
@@ -158,6 +122,8 @@ function splitTableByTreesValid(table, maxTreesPerPage = 4) {
 
   return treeChunks.map((treeGroup, groupIndex) => {
     const clone = table.cloneNode(true);
+    clone.classList.add(`valid${groupIndex + 1}`);
+
     const theadRows = clone.querySelectorAll('thead tr');
     const tbody = clone.querySelector('tbody');
     const templateRow = table.querySelector('tbody tr');
@@ -188,12 +154,17 @@ function splitTableByTreesValid(table, maxTreesPerPage = 4) {
 
       Array.from(tbody.rows).forEach(row => {
         for (let i = 0; i < 5; i++) {
-          const td = document.createElement('td');
-          td.dataset.tree = emptyName;
-          td.innerHTML = '<div>0</div>';
-          if (i < 4) td.classList.add('vertical-text');
-          row.appendChild(td);
-        }
+  const td = document.createElement('td');
+  td.dataset.tree = emptyName;
+  td.innerHTML = '<div>0</div>';
+  if (i < 4) {
+    td.classList.add('vertical-text');
+  } else {
+    td.setAttribute('data-sum', 'row');
+  }
+  row.appendChild(td);
+}
+
       });
     }
 
@@ -244,9 +215,11 @@ function splitTableByTreesInvalid(table, maxTreesPerPage = 4) {
 
   return treeChunks.map((treeGroup, groupIndex) => {
     const clone = table.cloneNode(true);
+    clone.classList.add(`invalid${groupIndex + 1}`);
+
     const theadRows = clone.querySelectorAll('thead tr');
     const tbody = clone.querySelector('tbody');
-    const templateRow = table.querySelector('tbody tr');
+    const templateRow = clone.querySelector('tbody tr');
 
     clone.querySelectorAll('td[data-tree], th[data-tree]').forEach(cell => {
       if (!treeGroup.includes(cell.dataset.tree)) {
@@ -270,11 +243,18 @@ function splitTableByTreesInvalid(table, maxTreesPerPage = 4) {
       });
     }
 
-    while (tbody.rows.length < 3 && templateRow) {
-      const newRow = templateRow.cloneNode(true);
+    while (tbody.rows.length < 3) {
+      const newRow = templateRow ? templateRow.cloneNode(true) : document.createElement('tr');
+
       const cells = newRow.querySelectorAll('td');
-      if (cells[0]) cells[0].textContent = '';
-      for (let i = 1; i < cells.length; i++) cells[i].remove();
+      if (cells.length > 0) {
+        if (cells[0]) cells[0].textContent = '';
+        for (let i = 1; i < cells.length; i++) cells[i].remove();
+      }
+
+      const cmTd = document.createElement('td');
+      cmTd.classList.add('cm-column');
+      newRow.appendChild(cmTd);
 
       treeGroup.forEach(treeName => {
         const td = document.createElement('td');
@@ -289,6 +269,7 @@ function splitTableByTreesInvalid(table, maxTreesPerPage = 4) {
     return clone.outerHTML;
   });
 }
+
 
 
 
@@ -316,20 +297,171 @@ function splitTableByTreesInvalid(table, maxTreesPerPage = 4) {
   `).join('')}
 </div>
     <script>
-    document.addEventListener("input", (e) => {
+  document.addEventListener("input", (e) => {
     const input = e.target;
     if (input.tagName === "INPUT" && input.name) {
       const allInputs = document.querySelectorAll('input[name="' + input.name + '"]');
-      allInputs.forEach(function (el) {
-        if (el !== input) {
-          el.value = input.value;
-        }
+      allInputs.forEach(el => {
+        if (el !== input) el.value = input.value;
       });
     }
   });
+function hideZeros() {
+  document.querySelectorAll("td").forEach(td => {
+    const div = td.querySelector("div");
+    if (div && div.textContent.trim() === "0") {
+      td.style.color = "transparent";
+    }
+  });
+}
+  window.ensureMinimumRowsInTables = function () {
+    const allValidTables = document.querySelectorAll('table[class^="valid"]');
 
- 
-   function removeZeroRows(tableElement) {
+    allValidTables.forEach(table => {
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const templateRow = tbody.querySelector('tr');
+      const sumRow = rows.find(row => row.innerText.trim().startsWith("Σ"));
+      const rowCount = rows.length - (sumRow ? 1 : 0);
+      const rowsToAdd = 3 - rowCount;
+
+      for (let i = 0; i < rowsToAdd; i++) {
+        const newRow = templateRow ? templateRow.cloneNode(true) : document.createElement('tr');
+        const cells = newRow.querySelectorAll('td');
+        if (cells.length > 0) {
+          if (cells[0]) cells[0].textContent = '';
+          for (let j = 0; j < cells.length; j++) cells[j].remove();
+        }
+
+        const cmTd = document.createElement('td');
+        cmTd.classList.add('cm-column');
+        newRow.appendChild(cmTd);
+
+        const headers = Array.from(
+          table.querySelectorAll('thead tr:nth-child(2) td[data-tree], thead tr:nth-child(2) th[data-tree]')
+        ).filter(cell => cell.colSpan !== 1);
+
+        headers.forEach(th => {
+          const tree = th.dataset.tree;
+          ['ділових', 'напівділових', "дров'яних", 'неліквідних', 'Σ'].forEach((label, j) => {
+            const td = document.createElement('td');
+            td.dataset.tree = tree;
+            td.innerHTML = '<div>0</div>';
+            if (j < 4) td.classList.add('vertical-text');
+            if (label === 'Σ') td.setAttribute('data-sum', 'row');
+            newRow.appendChild(td);
+          });
+        });
+
+        if (sumRow) {
+          tbody.insertBefore(newRow, sumRow);
+        } else {
+          tbody.appendChild(newRow);
+        }
+      }
+    });
+  };
+window.ensureMinimumRowsInInvalidTables = function () {
+  const allInvalidTables = Array.from(document.querySelectorAll('table')).filter(table =>
+  Array.from(table.classList).some(cls => cls.startsWith('invalid'))
+);
+
+
+  allInvalidTables.forEach(table => {
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const templateRow = tbody.querySelector('tr');
+
+    const sumRow = rows.find(row => row.innerText.trim().startsWith("Σ"));
+    const rowCount = rows.length - (sumRow ? 1 : 0);
+    const rowsToAdd = 3 - rowCount;
+
+    for (let i = 0; i < rowsToAdd; i++) {
+      const newRow = document.createElement('tr');
+
+      const cmTd = document.createElement('td');
+      cmTd.classList.add('cm-column');
+      newRow.appendChild(cmTd);
+
+      const headers = table.querySelectorAll('thead tr:nth-child(2) [data-tree]');
+      headers.forEach(th => {
+        const td = document.createElement('td');
+        td.dataset.tree = th.dataset.tree;
+        td.innerHTML = '<div>0</div>';
+        newRow.appendChild(td);
+      });
+
+      if (sumRow) {
+        tbody.insertBefore(newRow, sumRow);
+      } else {
+        tbody.appendChild(newRow);
+      }
+    }
+  });
+};
+
+function insertMissingInvalidTables() {
+  const wrapper = document.querySelector('.main-wrapper');
+  const totalValidTables = document.querySelectorAll('table[class^="valid"]').length;
+
+  for (let i = 1; i <= totalValidTables; i++) {
+    const validClass = 'valid' + i;
+    const invalidClass = 'invalid' + i;
+    const validTable = document.querySelector('.' + validClass);
+    const invalidTable = document.querySelector('.' + invalidClass);
+
+    if (!validTable || invalidTable) continue;
+
+    const emptyInvalid = document.createElement('table');
+    emptyInvalid.className = 'invalid-table ' + invalidClass;
+    emptyInvalid.innerHTML =
+      '<thead>' +
+        '<tr id="tree-head">' +
+          '<td class="cm-column" rowspan="3">Ступені товщини дерев, см</td>' +
+          '<td colspan="55" data-tree="__empty_invalid' + i + '">Кількість дерев у розрізі порід, штук</td>' +
+        '</tr>' +
+        '<tr>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+        '</tr>' +
+      '</thead>' +
+      '<tbody>' +
+        '<tr>' +
+          '<td class="cm-column"></td>' +
+          '<td data-tree="__empty_invalid' + i + '"><div>0</div></td>' +
+          '<td></td>' +
+          '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+          '<td class="cm-column"></td>' +
+          '<td data-tree="__empty_invalid' + i + '"><div>0</div></td>' +
+          '<td></td>' +
+          '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+          '<td class="cm-column"></td>' +
+          '<td data-tree="__empty_invalid' + i + '"><div>0</div></td>' +
+          '<td></td>' +
+          '<td></td>' +
+        '</tr>' +
+      '</tbody>';
+
+     const allHeaders = Array.from(wrapper.querySelectorAll('h1.second-header'));
+    const targetHeader = allHeaders[i - 1]; // h1 для соответствующей страницы
+
+    if (targetHeader) {
+      const next = targetHeader.nextElementSibling;
+      if (next) {
+        wrapper.insertBefore(emptyInvalid, next);
+      } else {
+        wrapper.appendChild(emptyInvalid);
+      }
+    }
+  }
+}
+
+  function removeZeroRows(tableElement) {
     const rows = tableElement.querySelectorAll("tbody tr");
 
     rows.forEach(row => {
@@ -351,16 +483,32 @@ function splitTableByTreesInvalid(table, maxTreesPerPage = 4) {
 
   window.addEventListener("DOMContentLoaded", () => {
     const allTables = document.querySelectorAll("table:not(.footer__table)");
-    allTables.forEach(table => removeZeroRows(table));
+    allTables.forEach(table => {
+      removeZeroRows(table);
+
+      const rows = table.querySelectorAll("tbody tr");
+      rows.forEach(row => {
+        if (row.textContent.trim().startsWith("Σ")) {
+          row.querySelectorAll("td").forEach(td => {
+            td.setAttribute("data-sum", "row");
+            const div = td.querySelector("div");
+            if (div && div.textContent.trim() === "0") {
+              div.textContent = '';
+            }
+          });
+        }
+      });
+    });
+
+    ensureMinimumRowsInTables();
+    ensureMinimumRowsInInvalidTables();
+    insertMissingInvalidTables();
+    hideZeros();
   });
+</script>
 
-  document.querySelectorAll("td").forEach(td => {
-  if (td.textContent.trim() === "0") {
-    td.style.color = "transparent";
-  }
-});
 
-  </script>
+
 </body>
 
     </html>
@@ -368,6 +516,8 @@ function splitTableByTreesInvalid(table, maxTreesPerPage = 4) {
 
   printWindow.document.close();
   printWindow.focus();
+  
+
 });
 
 function generateDotSVG(value) {
@@ -434,4 +584,5 @@ function generateSingleDotBlock(count) {
   svg += `</svg>`;
   return svg;
 }
+
 

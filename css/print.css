@@ -49,11 +49,11 @@ td[data-sum] {
 }
 
 td[data-tree]:not([data-sum]):has(div) {
-    padding: 1px;
+    padding: 1px 1px 4px;
     position: relative;
 }
 
-td[data-tree]>div:first-child {
+td[data-tree]:not([data-sum])>div:first-child {
     position: absolute;
     right: 2px;
     bottom: 1px;
