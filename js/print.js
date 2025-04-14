@@ -4,15 +4,51 @@ const month = String(today.getMonth() + 1).padStart(2, '0');
 const year = today.getFullYear();
 const todayData = `${day}.${month}.${year}`
 const mainHeader = `<h1 class="main-header">Польова перелікова відомість дерев, призначених для рубки</h1>
-        <p>Адміністративно-територіальна одиниця місце знаходження/місце проживання(перебування) постійного лісокористувача (відокремленого підрозділу) /власника лісів <input name="region" style="border:none; text-decoration-line: underline;  width: auto; min-width=5px" type="text" value="Сумська область"></input></p>
-        <p>Постійний лісокористувач(відокремлений підрозділ)/власник лісів<input name="company" style="border:none; text-decoration-line: underline; width: 800px;" type="text" value="ДП «Ліси України» (Філія «Північний лісовий офіс» Державного спеціалізованого господарського підприємства «Ліси України»)"></p>
-        <p>Найменування лісництва(структурного підрозділу) <input name="district" style="border:none; text-decoration-line: underline; width: 500px;" type="text" value="Олинське («ДП Свеське ЛГ») Шосткинське надлісництво"></p>
-        <p>категорія лісів <input name="forest-category" style="border:none; text-decoration-line: underline; width: 40px;" type="text">, господарство/господарська секція <input name="section" style="border:none; text-decoration-line: underline; width: 100px;" type="text">,
+        <p>Адміністративно-територіальна одиниця місце знаходження/місце проживання(перебування) постійного лісокористувача (відокремленого підрозділу) /власника лісів
+         <input name="region" style="border:none; text-decoration-line: underline;  width: auto; min-width=5px" type="text" value="Сумська область"></input></p>
+        <p>Постійний лісокористувач(відокремлений підрозділ)/власник лісів
+        <input name="company" style="border:none; text-decoration-line: underline; width: 800px;" type="text" value="ДП «Ліси України» (Філія «Північний лісовий офіс» Державного спеціалізованого господарського підприємства «Ліси України»)"></p>
+        <p>Найменування лісництва(структурного підрозділу) <input list="forestry_name" name="district" style="border:none; text-decoration-line: underline; width: 500px;" type="text">
+        <datalist id="forestry_name">
+      <option value='Свеське (ДП "Свеське ЛГ") Шосткинське надлісництво'></option>
+      <option value='Свеське(Чуйківське) (ДП "Свеське ЛГ") Шосткинське надлісництво'></option>
+      <option value='Прудищанське (ДП "Свеське ЛГ") Шосткинське надлісництво'></option>
+      <option value='Дружбівське (ДП "Свеське ЛГ") Шосткинське надлісництво'></option>
+      <option value='Олинське (ДП "Свеське ЛГ") Шосткинське надлісництво'></option></datalist></p>
+        <p>категорія лісів <input name="forest-category" style="border:none; text-decoration-line: underline; width: 40px;" type="text">, господарство/господарська секція
+        <input list="farm_section" name="section" style="border:none; text-decoration-line: underline; width: 116px;" type="text"> <datalist id="farm_section">
+      <option value="хвойне/соснова"></option>
+      <option value="хвойне/ялинова"></option>
+      <option value="тв.лист./дубова"></option>
+      <option value="м.лист./березова"></option>
+      <option value="м.лист./осикова"></option>
+      <option value="м.лист./вільхова"></option>
+    </datalist>,
         номер кварталу <input name="kvartal" style="border:none; text-decoration-line: underline; width: 40px;" type="text">, номер виділу <input name="vydil" style="border:none; text-decoration-line: underline; width: 40px;" type="text">, 
-        номер ділянки <input name="dilyanka" style="border:none; text-decoration-line: underline; width: 40px;" type="text">, лісосіка на <input name="year" style="border:none; text-decoration-line: underline; width: 40px;" type="text"> рік, система рубок <input name="system" style="border:none; text-decoration-line: underline; width: 100px;" type="text">,<br>вид, 
-        спосіб рубки <input name="method" style="border:none; text-decoration-line: underline; width: 100px;" type="text">, загальна площа ділянки <input name="area" style="border:none; text-decoration-line: underline; width: 40px;" type="text"> гектарів, забезпечення збереження підросту: площа <input name="saplings-area" style="border:none; text-decoration-line: underline; width: 40px;" type="text"> гектарів, порода <input name="saplings-type" style="border:none; text-decoration-line: underline; width: 40px;" type="text">, кількість на 1 гектар <input name="saplings-count" style="border:none; text-decoration-line: underline; width: 40px;" type="text"> тисяч штук. </p>
-        <p>Спосіб відновлення лісів <input name="restoration" style="border:none; text-decoration-line: underline;     width: 800px;" type="text"></p>
-        <p>Спосіб очищення <input name="clearing" style="border:none; text-decoration-line: underline; width: 800px;" type="text"></p>`;
+        номер ділянки <input name="dilyanka" style="border:none; text-decoration-line: underline; width: 40px;" type="text">, лісосіка на <input name="year" style="border:none; text-decoration-line: underline; width: 40px;" type="text"> рік, система рубок
+        <input list="system" name="system" style="border:none; text-decoration-line: underline; width: 112px;" type="text">
+        <datalist id="system">
+      <option value="РФіОЛ-догляду"></option>
+      <option value="РФіОЛ-санітарні"></option>
+      <option value="головне"></option>
+    </datalist>,<br>вид,
+        спосіб рубки <input list="type_method" name="method" style="border:none; text-decoration-line: underline; width: 112px;" type="text">   <datalist id="type_method">
+      <option value="ПРЖ/вибірковий"></option>
+      <option value="ПРХ/вибірковий"></option>
+      <option value="ВСР/вибірковий"></option>
+      <option value="РГК/суцільний"></option>
+    </datalist>, загальна площа ділянки <input name="area" style="border:none; text-decoration-line: underline; width: 40px;" type="text"> гектарів, забезпечення збереження підросту: площа <input name="saplings-area" style="border:none; text-decoration-line: underline; width: 40px;" type="text"> гектарів, порода <input name="saplings-type" style="border:none; text-decoration-line: underline; width: 40px;" type="text">, кількість на 1 гектар <input name="saplings-count" style="border:none; text-decoration-line: underline; width: 40px;" type="text"> тисяч штук. </p>
+        <p>Спосіб відновлення лісів <input list="restoration" name="restoration" style="border:none; text-decoration-line: underline;     width: 800px;" type="text">  <datalist id="restoration">
+      <option value="створення лісових культур"></option>
+      <option value="залишення під природнє поновлення"></option>
+    </datalist></p>
+        <p>Спосіб очищення <input list="cleaning" name="cleaning" style="border:none; text-decoration-line: underline; width: 800px;" type="text"> <datalist id="cleaning">
+      <option value="збирання в купи порубкові рештки та спалювання"></option>
+      <option
+        value="збирання в купи порубкові рештки для подальшого перегнивання"></option>
+    </datalist></p>
+    `;
+        
 const mainFooter = `<p class="second-side--text">Відомість склали:</p>
 <div class="footer second-side">
   <table class="footer__table">
