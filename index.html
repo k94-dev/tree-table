@@ -24,6 +24,7 @@
           <option value="Модрина">Модрина</option>
           <option value="Ясен">Ясен</option>
           <option value="Тополя">Тополя</option>
+          <option value="Акація">Акація</option>
         </select>
         <div class="nav-bar__item">
           <button id="clean-btn">
@@ -80,6 +81,7 @@
             <td data-tree="Модрина" colspan="5">Модрина</td>
             <td data-tree="Ясен" colspan="5">Ясен</td>
             <td data-tree="Тополя" colspan="5">Тополя</td>
+            <td data-tree="Акація" colspan="5">Акація</td>
           </tr>
           <tr>
             <td data-tree="Сосна" class="vertical-text">ділових</td>
@@ -145,8 +147,8 @@
             <td data-tree="Модрина" class="vertical-text">дров'яних</td>
             <td data-tree="Модрина" class="vertical-text">неліквідних</td>
             <td data-tree="Модрина">Σ</td>
-            <td data-tree="Ясен" class="vertical-text">ділових</td>
 
+            <td data-tree="Ясен" class="vertical-text">ділових</td>
             <td data-tree="Ясен" class="vertical-text">напівділових</td>
             <td data-tree="Ясен" class="vertical-text">дров'яних</td>
             <td data-tree="Ясен" class="vertical-text">неліквідних</td>
@@ -157,6 +159,12 @@
             <td data-tree="Тополя" class="vertical-text">дров'яних</td>
             <td data-tree="Тополя" class="vertical-text">неліквідних</td>
             <td data-tree="Тополя">Σ</td>
+
+            <td data-tree="Акація" class="vertical-text">ділових</td>
+            <td data-tree="Акація" class="vertical-text">напівділових</td>
+            <td data-tree="Акація" class="vertical-text">дров'яних</td>
+            <td data-tree="Акація" class="vertical-text">неліквідних</td>
+            <td data-tree="Акація">Σ</td>
           </tr>
         </thead>
         <tbody id="table-body">
@@ -357,6 +365,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -391,6 +400,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">12</td>
@@ -589,6 +619,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -623,6 +654,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">16</td>
@@ -821,6 +873,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -855,6 +908,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">20</td>
@@ -1053,6 +1127,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -1087,6 +1162,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">24</td>
@@ -1285,6 +1381,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -1319,6 +1416,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">28</td>
@@ -1517,6 +1635,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -1551,6 +1670,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">32</td>
@@ -1749,6 +1889,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -1783,6 +1924,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">36</td>
@@ -1981,6 +2143,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -2015,6 +2178,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">40</td>
@@ -2213,6 +2397,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -2247,6 +2432,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">44</td>
@@ -2445,6 +2651,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -2479,6 +2686,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">48</td>
@@ -2677,6 +2905,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -2711,6 +2940,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">52</td>
@@ -2909,6 +3159,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -2943,6 +3194,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">56</td>
@@ -3141,6 +3413,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -3175,6 +3448,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">60</td>
@@ -3373,6 +3667,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -3407,6 +3702,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">64</td>
@@ -3605,6 +3921,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -3639,6 +3956,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">68</td>
@@ -3837,6 +4175,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -3871,6 +4210,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">72</td>
@@ -4069,6 +4429,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -4103,6 +4464,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">76</td>
@@ -4301,6 +4683,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -4335,6 +4718,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">80</td>
@@ -4533,6 +4937,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -4567,6 +4972,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">84</td>
@@ -4765,6 +5191,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -4799,6 +5226,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">88</td>
@@ -4997,6 +5445,7 @@
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
             </td>
+            <td data-tree="Модрина" data-sum="row"></td>
             <td data-tree="Ясен" data-type="ділових">
               <input type="number" /><button type="button">+</button
               ><button type="button">-</button>
@@ -5031,6 +5480,27 @@
               ><button type="button">-</button>
             </td>
             <td data-tree="Тополя" data-sum="row"></td>
+            <td data-tree="Акація" data-type="ділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="напівділових">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="дров'яних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-type="неліквідних">
+              <input type="number" />
+              <button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація" data-sum="row"></td>
           </tr>
           <tr>
             <td class="active">Σ</td>
@@ -5117,6 +5587,14 @@
             <td data-sum="col" data-tree="Тополя" data-type="дров'яних">0</td>
             <td data-sum="col" data-tree="Тополя" data-type="неліквідних">0</td>
             <td data-sum="col-total" data-tree="Тополя">0</td>
+
+            <td data-sum="col" data-tree="Акація" data-type="ділових">0</td>
+            <td data-sum="col" data-tree="Акація" data-type="напівділових">
+              0
+            </td>
+            <td data-sum="col" data-tree="Акація" data-type="дров'яних">0</td>
+            <td data-sum="col" data-tree="Акація" data-type="неліквідних">0</td>
+            <td data-sum="col-total" data-tree="Акація">0</td>
           </tr>
         </tbody>
       </table>
@@ -5148,6 +5626,7 @@
             <td data-tree="Модрина">Модрина</td>
             <td data-tree="Ясен">Ясен</td>
             <td data-tree="Тополя">Тополя</td>
+            <td data-tree="Акація">Акація</td>
           </tr>
         </thead>
         <tbody>
@@ -5202,6 +5681,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -5260,6 +5743,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">16</td>
@@ -5315,6 +5802,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">20</td>
@@ -5367,6 +5858,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -5426,6 +5921,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">28</td>
@@ -5478,6 +5977,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -5536,6 +6039,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">36</td>
@@ -5588,6 +6095,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -5646,6 +6157,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">44</td>
@@ -5698,6 +6213,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -5756,6 +6275,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">52</td>
@@ -5808,6 +6331,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -5866,6 +6393,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">60</td>
@@ -5918,6 +6449,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -5976,6 +6511,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">68</td>
@@ -6028,6 +6567,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -6086,6 +6629,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">76</td>
@@ -6138,6 +6685,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
@@ -6196,6 +6747,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">84</td>
@@ -6251,6 +6806,10 @@
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
+            <td data-tree="Акація">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
           </tr>
           <tr>
             <td class="active">88</td>
@@ -6303,6 +6862,10 @@
               <button type="button">-</button>
             </td>
             <td data-tree="Тополя">
+              <input type="number" /><button type="button">+</button>
+              <button type="button">-</button>
+            </td>
+            <td data-tree="Акація">
               <input type="number" /><button type="button">+</button>
               <button type="button">-</button>
             </td>
